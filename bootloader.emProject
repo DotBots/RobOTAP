@@ -6,11 +6,11 @@
       Name="Common"
       linker_memory_map_file="$(ProjectDir)/$(Target)_MemoryMap.xml"
       linker_output_format="hex"
-      project_dependencies="00bsp_gpio(bsp);00bsp_uart(bsp);00bsp_timer_hf(bsp);00bsp_partition(bsp);00bsp_nvmc(bsp);00drv_dotbot_hdlc(drv);00drv_ota(drv)"
+      project_dependencies="00bsp_gpio(bsp);00bsp_uart(bsp);00bsp_timer_hf(bsp);00bsp_partition(bsp);00bsp_nvmc(bsp);00drv_dotbot_hdlc(drv);ota(ota)"
       project_directory="bootloader"
       project_type="Executable" />
     <folder Name="Setup">
-      <file file_name="$(ProjectDir)/../../nRF/Setup/$(Target)_flash_placement.xml" />
+      <file file_name="$(ProjectDir)/../dotbot-libs/nRF/Setup/$(Target)_flash_placement.xml" />
       <file file_name="$(ProjectDir)/$(Target)_MemoryMap.xml">
         <configuration Name="Common" file_type="Memory Map" />
       </file>
@@ -23,7 +23,7 @@
       <file file_name="main.c" />
     </folder>
     <folder Name="System">
-      <file file_name="$(ProjectDir)/../../nRF/System/cpu.c" />
+      <file file_name="$(ProjectDir)/../dotbot-libs/nRF/System/cpu.c" />
     </folder>
   </project>
 </solution>

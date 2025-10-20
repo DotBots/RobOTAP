@@ -27,7 +27,7 @@
     build_treat_warnings_as_errors="Yes"
     c_additional_options="-Wno-strict-prototypes"
     c_preprocessor_definitions="__NO_SYSTEM_INIT;__NO_FPU_ENABLE;ARM_MATH_ARMV8MML;NRF5340_XXAA;NRF_APPLICATION;__NRF_FAMILY;CONFIG_NFCT_PINS_AS_GPIOS;FLASH_PLACEMENT=1;BOARD_NRF5340DK;NO_IPC;IRQ_VECTORS_SHORT"
-    c_user_include_directories="$(SolutionDir)/../bsp;$(SolutionDir)/../crypto;$(SolutionDir)/../drv;$(PackagesDir)/nRF/Device/Include;$(PackagesDir)/CMSIS_5/CMSIS/Core/Include"
+    c_user_include_directories="$(SolutionDir)/ota;$(SolutionDir)/dotbot-libs/bsp;$(SolutionDir)/dotbot-libs/crypto;$(SolutionDir)/dotbot-libs/drv;$(PackagesDir)/nRF/Device/Include;$(PackagesDir)/CMSIS_5/CMSIS/Core/Include"
     compiler_color_diagnostics="Yes"
     debug_stack_pointer_start="__stack_end__"
     debug_start_from_entry_point_symbol="No"
@@ -41,7 +41,7 @@
     link_time_optimization="No"
     linker_memory_map_file="$(ProjectDir)/nRF5340_xxAA_Application_MemoryMap.xml"
     linker_output_format="hex"
-    linker_section_placement_file="$(ProjectDir)/../../nRF/Setup/nRF5340_xxAA_Application_flash_placement.xml"
+    linker_section_placement_file="$(ProjectDir)/../dotbot-libs/nRF/Setup/nRF5340_xxAA_Application_flash_placement.xml"
     macros="BuildTarget=nrf5340dk-app;DeviceFamily=nRF;Target=nRF5340_xxAA_Application"
     project_type="Executable"
     target_reset_script="Reset();"
@@ -58,8 +58,9 @@
     gcc_debugging_level="Level 2"
     gcc_omit_frame_pointer="Yes"
     gcc_optimization_level="Level 2 balanced" />
-  <import file_name="../bsp/bsp.emProject" />
-  <import file_name="../crypto/crypto.emProject" />
-  <import file_name="../drv/drv.emProject" />
+  <import file_name="dotbot-libs/bsp/bsp.emProject" />
+  <import file_name="dotbot-libs/crypto/crypto.emProject" />
+  <import file_name="dotbot-libs/drv/drv.emProject" />
+  <import file_name="ota/ota.emProject" />
   <import file_name="bootloader.emProject" />
 </solution>

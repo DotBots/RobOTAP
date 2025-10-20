@@ -4,14 +4,14 @@
     <configuration
       Name="Common"
       c_preprocessor_definitions="DOTBOT_PARTITION=0;DOTBOT_BUILD_TIME=&quot;$(Date) - $(Time)&quot;"
-      linker_additional_files="$(SolutionDir)/../crypto/nrf_cc310/lib/libnrf_cc310_0.9.13-hard-float-no-interrupts-$(Target).a"
+      linker_additional_files="$(SolutionDir)/dotbot-libs/crypto/nrf_cc310/lib/libnrf_cc310_0.9.13-hard-float-no-interrupts-$(Target).a"
       linker_memory_map_file="$(ProjectDir)/$(Target)_MemoryMap.xml"
       linker_output_format="bin"
-      project_dependencies="00bsp_gpio(bsp);00bsp_timer(bsp);00drv_ota(drv);00bsp_radio(bsp)"
+      project_dependencies="00bsp_gpio(bsp);00bsp_timer(bsp);00bsp_radio(bsp);ota(ota)"
       project_directory="partition0"
       project_type="Executable" />
     <folder Name="Setup">
-      <file file_name="$(ProjectDir)/../../nRF/Setup/$(Target)_flash_placement.xml" />
+      <file file_name="$(ProjectDir)/../dotbot-libs/nRF/Setup/$(Target)_flash_placement.xml" />
       <file file_name="$(ProjectDir)/$(Target)_MemoryMap.xml">
         <configuration Name="Common" file_type="Memory Map" />
       </file>
@@ -24,22 +24,22 @@
       <file file_name="main.c" />
     </folder>
     <folder Name="System">
-      <file file_name="$(ProjectDir)/../../nRF/System/$(Target)_system_init.c" />
-      <file file_name="$(ProjectDir)/../../nRF/System/cpu.c" />
+      <file file_name="$(ProjectDir)/../dotbot-libs/nRF/System/$(Target)_system_init.c" />
+      <file file_name="$(ProjectDir)/../dotbot-libs/nRF/System/cpu.c" />
     </folder>
   </project>
   <project Name="partition1">
     <configuration
       Name="Common"
       c_preprocessor_definitions="DOTBOT_PARTITION=1;DOTBOT_BUILD_TIME=&quot;$(Date) - $(Time)&quot;"
-      linker_additional_files="$(SolutionDir)/../crypto/nrf_cc310/lib/libnrf_cc310_0.9.13-hard-float-no-interrupts-$(Target).a"
+      linker_additional_files="$(SolutionDir)/dotbot-libs/crypto/nrf_cc310/lib/libnrf_cc310_0.9.13-hard-float-no-interrupts-$(Target).a"
       linker_memory_map_file="$(ProjectDir)/$(Target)_MemoryMap.xml"
       linker_output_format="bin"
-      project_dependencies="00bsp_gpio(bsp);00bsp_timer(bsp);00bsp_radio(bsp);00drv_ota(drv)"
+      project_dependencies="00bsp_gpio(bsp);00bsp_timer(bsp);00bsp_radio(bsp);ota(ota)"
       project_directory="partition1"
       project_type="Executable" />
     <folder Name="Setup">
-      <file file_name="$(ProjectDir)/../../nRF/Setup/$(Target)_flash_placement.xml" />
+      <file file_name="$(ProjectDir)/../dotbot-libs/nRF/Setup/$(Target)_flash_placement.xml" />
       <file file_name="$(ProjectDir)/$(Target)_MemoryMap.xml">
         <configuration Name="Common" file_type="Memory Map" />
       </file>
@@ -52,8 +52,8 @@
       <file file_name="main.c" />
     </folder>
     <folder Name="System">
-      <file file_name="$(ProjectDir)/../../nRF/System/$(Target)_system_init.c" />
-      <file file_name="$(ProjectDir)/../../nRF/System/cpu.c" />
+      <file file_name="$(ProjectDir)/../dotbot-libs/nRF/System/$(Target)_system_init.c" />
+      <file file_name="$(ProjectDir)/../dotbot-libs/nRF/System/cpu.c" />
     </folder>
   </project>
 </solution>
