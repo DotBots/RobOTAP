@@ -1,8 +1,8 @@
 # RobOTAP
 
-This directory contains 3 applications that be used for over-the-air
+This repository contains 3 applications that be used for over-the-air
 programming (OTAP) of DotBots:
-- **bootloader** contains a flexible bootloader application that
+- **bootloader** is a flexible bootloader application that
   can be used to boot an image written at a given address on the flash memory.
   The bootloader application must be compiled in **Release** mode to make it as
   small as possible so that it stays under 4kiB. By default, the bootloader reads
@@ -19,15 +19,13 @@ programming (OTAP) of DotBots:
     image can be sent over UART to the active partition. Once completed the
     device has to be reset manually so it boots on the newly flashed image.
 
-- **partition0**
-  contains a sample application that is linked so that
+- **partition0** is a sample application that is linked so that
   it can be written at address 0x2000, after the bootloader and partition tables
   pages. This application simply blinks an LED (LED1 on nRF DKs) and also
   contains the logic to download 128B chunks of an image and to write them on
   partition 1,
 
-- **partition1**
-  contains another sample application that is
+- **partition1** is another sample application that is
   linked so that it can be written at address 0x41000 on nrf52833 or 0x81000 on
   nrf52840/nrf5340-app, after the image on partition 0. This application also
   simply blinks an LED (LED2 on nRF DKs) and contains the logic to download
